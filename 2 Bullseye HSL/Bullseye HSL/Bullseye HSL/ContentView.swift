@@ -10,8 +10,8 @@ import SwiftUI
 
 struct ContentView: View {
     @State var hTarget = Double.random(in: 0..<1)
-    @State var sTarget = Double.random(in: 0..<1)
-    @State var bTarget = Double.random(in: 0..<1)
+    @State var sTarget = Double.random(in: 0.15..<1)
+    @State var bTarget = Double.random(in: 0.15..<1)
     
     @State var hGuess: Double
     @State var sGuess: Double
@@ -29,8 +29,8 @@ struct ContentView: View {
     
     func resetGame() {
         hTarget = Double.random(in: 0..<1)
-        sTarget = Double.random(in: 0..<1)
-        bTarget = Double.random(in: 0..<1)
+        sTarget = Double.random(in: 0.15..<1)
+        bTarget = Double.random(in: 0.15..<1)
     }
     
     var body: some View {
@@ -48,6 +48,8 @@ struct ContentView: View {
                             )
                         )
                     Text("Match this color")
+                }.onAppear {
+                    self.resetGame()
                 }
                 // Guess color block
                 VStack {
